@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  compile:
+   docker:
+      - image: azrim89/kernel:latest
+   steps:
+      - run:
+          command: |
+            git config --global user.name "fakeriz"
+            git config --global user.email "hafizharrizqa15@gmail.com"
+            git clone https://github.com/Zombie-Prjkt/kernel_xiaomi_surya-1.git -b staging --depth=1
+            cd kernel_xiaomi_surya-1
+            bash /root/project/CompileKernel/build.sh
+workflows:
+  version: 2.1
+  cooking:
+    jobs:
+      - compile
