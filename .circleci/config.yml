@@ -10,7 +10,8 @@ jobs:
             git config --global user.email "hafizharrizqa15@gmail.com"
             git clone https://github.com/Zombie-Prjkt/kernel_xiaomi_surya-1.git -b staging --depth=1
             cd kernel_xiaomi_surya-1
-            bash /root/project/CompileKernel/build.sh
+            wget https://raw.githubusercontent.com/Coryanthes99/CompileKernel/main/build.sh
+            bash build.sh
 workflows:
   version: 2.1
   cooking:
